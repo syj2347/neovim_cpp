@@ -1,6 +1,7 @@
 require "nvchad.options"
 
 local opt = vim.opt
+opt.number = true
 
 --- Common
 -- NvChad 默认只设置高亮当前行的行号，这里把整行也高亮了

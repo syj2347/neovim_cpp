@@ -5,6 +5,9 @@ local nvlsp = require "nvchad.configs.lspconfig"
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     nvlsp.on_attach(_, args.buf)
+    vim.keymap.set("n", "K", function()
+      vim.lsp.buf.hover { border = "rounded" }
+    end, { buffer = args.buf, desc = "LSP Hover" })
   end,
 })
 
